@@ -8,12 +8,12 @@ var password = {
   numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
   lowerCase: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
   upperCase: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
-  symbols: ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", " < ", "=", " > ", "?", "@", "[", "]", "`", "|", "~"],
+  symbols: ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "`", "|", "~"],
 }
 
 //////////////////////// FUNCTIONS 
 
-// Generating a password function with empty arrays.
+// Generating a random password function.
 function generatePassword() { 
   var userPasswordParameters = userInput();
  return userPasswordParameters; 
@@ -25,6 +25,10 @@ function randomChar(array) {
     var element = array[i];
     return element;
 } 
+//working on the function that would only allow numerical values for the password
+//function validateNumPasswordChar (promptImput) {
+ // If 
+//}
 
 //Main logic to return the pasasword based on user inputs 
 function userInput () { 
@@ -36,7 +40,7 @@ function userInput () {
     var passwordUpperCase;
     var passwordSymbols;
 
-    //Additional Varaibles 
+    //Additional Varaibles with empty arrays
     var userPassword = [];
     var userCharacters = [];
     var charactersInc = [];
@@ -48,7 +52,7 @@ function userInput () {
       return
       
     } 
-    console.log(typeof passwordLength);
+    console.log( typeof passwordLength);
     if( typeof passwordLength === 'string') {
       alert ("Sorry, the password length must be provided as a number. Please try again!");
       return
@@ -61,6 +65,7 @@ function userInput () {
       alert ("Sorry, the password length must be less than 128 characters. Please try again!");
       return
     }
+    
 
      // Confirms
      passwordUpperCase = confirm ("Click OK to include upper case letters in your password.");
